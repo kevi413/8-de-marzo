@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de la Mujer - Para Adri y Dolores 💙</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #9b59b6 0%, #e84393 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            color: #4a1d6d;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid #e84393;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .from-kevin {
+            font-size: 1.5em;
+            color: #3498db;
+            margin: 10px 0 5px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .heart-beat {
+            color: #e84393;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .dedication {
+            font-size: 1.2em;
+            color: #8e44ad;
+            margin-bottom: 25px;
+            font-style: italic;
+            background: #f8e1f0;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* Estilos para las tarjetas individuales */
+        .women-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+
+        .woman-card {
+            flex: 1 1 250px;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .woman-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .woman-card.adri {
+            background: linear-gradient(135deg, #fff5f8, #ffe9f0);
+            border-left: 5px solid #e84393;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .woman-card.adri::after {
+            content: '💙';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+            opacity: 0.5;
+        }
+
+        .woman-card.dolores {
+            background: linear-gradient(135deg, #f5f0ff, #e9e0ff);
+            border-right: 5px solid #9b59b6;
+        }
+
+        .woman-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .woman-name {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .woman-name.adri {
+            color: #e84393;
+        }
+
+        .woman-name.dolores {
+            color: #9b59b6;
+        }
+
+        .woman-message {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+            min-height: 160px;
+            text-align: left;
+            padding: 0 5px;
+        }
+
+        .woman-footer {
+            font-size: 0.95em;
+            color: #888;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .special-highlight {
+            color: #e84393;
+            font-weight: 600;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .flowers {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .flower {
+            font-size: 35px;
+            animation: bloom 2s ease-in-out infinite;
+            animation-delay: calc(var(--i) * 0.3s);
+        }
+
+        @keyframes bloom {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .flower:nth-child(1) { --i: 0; }
+        .flower:nth-child(2) { --i: 1; }
+        .flower:nth-child(3) { --i: 2; }
+        .flower:nth-child(4) { --i: 3; }
+        .flower:nth-child(5) { --i: 4; }
+
+        .footer-message {
+            background: linear-gradient(135deg, #f8e1f0, #e8d1f0);
+            border-radius: 50px;
+            padding: 20px;
+            margin: 30px 0 20px;
+            color: #4a1d6d;
+            font-size: 1.2em;
+            font-weight: 500;
+            border: 2px solid #c44569;
+        }
+
+        .signature {
+            margin-top: 30px;
+            color: #666;
+            font-size: 1.1em;
+            border-top: 2px dashed #3498db;
+            padding-top: 20px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .small-note {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+            
+            .women-container {
+                flex-direction: column;
+            }
+            
+            .woman-card {
+                flex: 1 1 auto;
+            }
+            
+            .woman-message {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-content">
+            <div class="main-icon">💫</div>
+            <h1>¡Feliz Día de la Mujer!</h1>
+            
+            <div class="from-kevin">
+                💙 Un detalle de Kevin 💙
+            </div>
+            
+            <div class="heart-beat">
+                Para dos mujeres especiales
+            </div>
+
+            <div class="dedication">
+                💕 Adri y Dolores 💕
+            </div>
+
+            <div class="flowers">
+                <span class="flower">🌹</span>
+                <span class="flower">🌷</span>
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">💐</span>
+            </div>
+
+            <!-- Contenedor de las dos tarjetas -->
+            <div class="women-container">
+                <!-- Tarjeta para Adri - Mensaje especial con ese detalle -->
+                <div class="woman-card adri">
+                    <div class="woman-icon">💖</div>
+                    <div class="woman-name adri">Adri</div>
+                    <div class="woman-message">
+                        <p>✨ <strong>Para Adri:</strong> ✨</p>
+                        <p>Que tengas un día tan bonito como tú. </p>
+                        <p class="special-highlight">"Haces mis días más felices"</p>
+                        <p>Gracias por existir y alegrar con tu forma de ser. ¡Disfruta tu día!</p>
+                    </div>
+                    <div class="woman-footer">
+                        💙 Con mucho cariño 💙
+                    </div>
+                </div>
+
+                <!-- Tarjeta para Dolores - Mensaje cálido y respetuoso -->
+                <div class="woman-card dolores">
+                    <div class="woman-icon">🌷</div>
+                    <div class="woman-name dolores">Dolores</div>
+                    <div class="woman-message">
+                        <p>🌸 <strong>Para Dolores:</strong> 🌸</p>
+                        <p>Un cálido saludo en este día especial. Espero que lo disfrute rodeada de cariño y que tenga motivos para sonreír. ¡Se lo merece!</p>
+                    </div>
+                    <div class="woman-footer">
+                        💐 Que tenga un lindo día 💐
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje central -->
+            <div class="footer-message">
+                <p style="font-size: 1.3em; margin-bottom: 10px;">💞 Adri y Dolores 💞</p>
+                <p>Dos mujeres, dos historias, un mismo día para celebrarlas.  
+                Que el 8 de marzo les traiga razones para sentirse orgullosas 
+                de todo lo que son. ¡Feliz día!</p>
+                <p style="margin-top: 15px;">💫 Con aprecio y buenos deseos 💫</p>
+            </div>
+
+            <!-- Firma simple -->
+            <div class="signature">
+                💙 Kevin 💙
+            </div>
+
+            <div class="small-note">
+                Un pequeño detalle para alegrarles el día
+            </div>
+
+            <div class="footer">
+                <p>8 de marzo - Día Internacional de la Mujer</p>
+                <p style="margin-top: 10px; color: #c44569;">
+                    Para Adri y Dolores
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
